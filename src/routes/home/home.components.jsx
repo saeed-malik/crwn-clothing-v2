@@ -1,5 +1,6 @@
 import Directory from "../../components/directory/directory.component";
 import { Outlet } from "react-router-dom";
+import { ReactComponent as CrownLogo } from "../../assets/MyLogo.svg";
 
 const Home = () => {
   const categories = [
@@ -34,6 +35,9 @@ const Home = () => {
     <div>
       <Outlet />
       <Directory categories={categories}/>
+      <div className="logo">
+        <CrownLogo />
+      </div>
     </div>
   )
 };
