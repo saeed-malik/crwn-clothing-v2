@@ -28,10 +28,6 @@ const SignUpForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password !== confirmPassword) {
-            alert("Passwords don't match");
-            return;
-        } 
         try {
             const { user } = await createAuthUserWithEmailAndPassword(
                 email, 
@@ -39,19 +35,16 @@ const SignUpForm = () => {
             );
             await createUserDocumentFromAuth(user, {displayName})
             resetFormFields()
+            console.log(user)
         } catch (error) {
-            if (error.code === 'auth/email-already-in-use') {
-                alert('Can not create user, email already in use.')
-            } else {
-                console.log('user creation encoutered an error', error)
-            }
+            console.log('user does not exist', error)
         }
     }
 
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormFields({ ...formFields, [name]: value })
-            }
+    }
 
     return (
         <div className="sign-up-container">
