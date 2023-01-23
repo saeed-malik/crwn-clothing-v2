@@ -23,7 +23,6 @@ export const CartDropdownContainer = styled.div`
   ${GoogleSignInButton},
   ${InvertedButton} 
   { margin-top: auto; }
-  
 ` 
 export const EmptyMessage = styled.span`
   font-size: 18px;
