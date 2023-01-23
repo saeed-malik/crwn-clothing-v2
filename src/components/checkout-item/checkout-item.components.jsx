@@ -1,3 +1,4 @@
+import React from "react";
 import CheckoutQuantity from '../checkout-quantity/checkout-quantity.component'
 import './checkout-item.styles.scss'
 import { useContext } from 'react'
